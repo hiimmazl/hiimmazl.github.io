@@ -22,7 +22,7 @@ theme:
     
 # Page tree
 nav:
-  - Home: docs/index.md
+  - Home: index.md
   - Getting started: getting-started.md
   - Extensions:
     - Admonition: extensions/admonition.md
