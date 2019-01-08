@@ -22,11 +22,11 @@
 site_name: Material for MkDocs
 site_description: A Material Design theme for MkDocs
 site_author: Martin Donath
-site_url: https://squidfunk.github.io/mkdocs-material/
+site_url: https://hiimmazl.github.io/mkdocs-material/
 
 # Repository
-repo_name: squidfunk/mkdocs-material
-repo_url: https://github.com/squidfunk/mkdocs-material
+repo_name: hiimmazl/hiimmazl.github.io
+repo_url: https://github.com/hiimmazl/hiimmazl.github.io
 edit_uri: ""
 
 # Copyright
