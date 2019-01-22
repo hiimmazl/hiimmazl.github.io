@@ -515,23 +515,20 @@
 <h3 id="1-method">1. Method</h3>
 <p><html>
 </center></html></p>
-<blockquote>
+<div class="admonition quote">
+<p class="admonition-title">Quote</p>
 <p>Managed to resolve this issue now. 
 In the newest version of Office 2016, it looks for Autodiscover records at 365 first, before trying 
 to use SCR etc. Older versions try to use SCP and HTTP methods, but now 365 is the default. 
 This can be disabled With this reg key, which stops Outlook from trying to poll 365 autodiscover 
 records first. </p>
-</blockquote>
+</div>
 <p><strong>[HKEY_CURRENT_USER\Software\Microsoft\Office\16.O\Outlook\AutoDiscover]</strong>
 "ExcludeExplicitO365Endpoint"=dword:00000001</p>
-<p><html>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<body></p>
-<p><i class="material-icons">&#xe88f;</i> <code>This will probably not apply if you use 365 for your Exchange.</code> </br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code>We use on-prem Exchange 2010.</code></p>
-<p></body></p>
-<p></html></p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>This will probably not apply if you use 365 for your Exchange. We use on-prem Exchange 2010.</p>
+</div>
                 
                   
                 
