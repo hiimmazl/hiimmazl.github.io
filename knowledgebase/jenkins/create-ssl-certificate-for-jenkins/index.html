@@ -599,15 +599,17 @@
 </center></html></p>
 <hr />
 <h4 id="private-key-and-cert-file-to-p12-file">private key and cert-file to .p12 file</h4>
-<div class="codehilite"><pre><span></span>.\openssl pkcs12 -export -out server.p12 -inkey server.key -in server.crt // Set some password!
+<div class="codehilite"><pre><span></span><span class="nb">cd </span><span class="n">C</span><span class="err">:</span><span class="p">\</span><span class="n">OpenSSL</span>
+
+<span class="p">.\</span><span class="n">openssl</span> <span class="n">pkcs12</span> <span class="n">-export</span> <span class="n">-out</span> <span class="n">server</span><span class="p">.</span><span class="n">p12</span> <span class="n">-inkey</span> <span class="n">server</span><span class="p">.</span><span class="n">key</span> <span class="n">-in</span> <span class="n">server</span><span class="p">.</span><span class="n">crt</span> <span class="p">//</span> <span class="nb">Set </span><span class="n">some</span> <span class="n">password</span><span class="p">!</span>
 </pre></div>
 
 <h4 id="create-java-keystore-and-store-the-p12-certificate-in-it">create java keystore and store the .p12 certificate in it</h4>
-<div class="codehilite"><pre><span></span>cd &quot;C:\Program Files (x86)\Jenkins\jre\bin&quot;
+<div class="codehilite"><pre><span></span><span class="nb">cd </span><span class="s2">&quot;C:\Program Files (x86)\Jenkins\jre\bin&quot;</span>
 
-.\keytool -importkeystore -srckeystore &quot;C:\Program Files (x86)\Jenkins\ssl_ce
-rtificate\vm-scripting.p12&quot; -srcstoretype pkcs12 -destkeystore &quot;C:\Program Files (x86)\Jenkins\ssl_certificate\Jenkins.j
-ks&quot; -deststoretype JK
+<span class="p">.\</span><span class="n">keytool</span> <span class="n">-importkeystore</span> <span class="n">-srckeystore</span> <span class="s2">&quot;C:\Program Files (x86)\Jenkins\ssl_ce</span>
+<span class="s2">rtificate\%Certificate%.p12&quot;</span> <span class="n">-srcstoretype</span> <span class="n">pkcs12</span> <span class="n">-destkeystore</span> <span class="s2">&quot;C:\Program Files (x86)\Jenkins\ssl_certificate\Jenkins.j</span>
+<span class="s2">ks&quot;</span> <span class="n">-deststoretype</span> <span class="n">JK</span>
 </pre></div>
                 
                   
