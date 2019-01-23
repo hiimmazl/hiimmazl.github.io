@@ -36,7 +36,7 @@
     
     
       
-        <title>keeps prompting for password - Hi Im Mazl´s Wiki</title>
+        <title>calculated expressions - Hi Im Mazl´s Wiki</title>
       
     
     
@@ -91,7 +91,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#outlook-keeps-prompting-for-password" tabindex="1" class="md-skip">
+      <a href="#powershell-calculated-properties" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -117,7 +117,7 @@
                 Hi Im Mazl´s Wiki
               </span>
               <span class="md-header-nav__topic">
-                keeps prompting for password
+                calculated expressions
               </span>
             
           
@@ -373,10 +373,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3" checked>
     
     <label class="md-nav__link" for="nav-2-3">
       Powershell
@@ -394,7 +396,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../powershell/bypass-certifcate-validation/" title="bypass certifcate validation" class="md-nav__link">
+    <a href="../bypass-certifcate-validation/" title="bypass certifcate validation" class="md-nav__link">
       bypass certifcate validation
     </a>
   </li>
@@ -406,49 +408,11 @@
 
 
   <li class="md-nav__item">
-    <a href="../../powershell/delete-variable-cache/" title="delete variable cache" class="md-nav__link">
+    <a href="../delete-variable-cache/" title="delete variable cache" class="md-nav__link">
       delete variable cache
     </a>
   </li>
 
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../powershell/calculated-properties/" title="calculated expressions" class="md-nav__link">
-      calculated expressions
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4" checked>
-    
-    <label class="md-nav__link" for="nav-2-4">
-      Outlook
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-4">
-        Outlook
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
         
           
           
@@ -464,10 +428,46 @@
       
     
     
-    <a href="./" title="keeps prompting for password" class="md-nav__link md-nav__link--active">
-      keeps prompting for password
+    <a href="./" title="calculated expressions" class="md-nav__link md-nav__link--active">
+      calculated expressions
     </a>
     
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4">
+    
+    <label class="md-nav__link" for="nav-2-4">
+      Outlook
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-4">
+        Outlook
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../outlook/keeps-prompting-for-password/" title="keeps prompting for password" class="md-nav__link">
+      keeps prompting for password
+    </a>
   </li>
 
         
@@ -547,26 +547,35 @@
                 
                 <p><html>
 <center></html></p>
-<h1 id="outlook-keeps-prompting-for-password">Outlook - keeps prompting for password</h1>
+<h1 id="powershell-calculated-properties">powershell - calculated properties</h1>
 <p><html>
 </center></html></p>
 <hr />
-<div class="admonition quote">
-<p class="admonition-title">Quote</p>
-<p>Managed to resolve this issue now. 
-In the newest version of Office 2016, it looks for Autodiscover records at 365 first, before trying 
-to use SCR etc. Older versions try to use SCP and HTTP methods, but now 365 is the default. 
-This can be disabled With this reg key, which stops Outlook from trying to poll 365 autodiscover 
-records first. </p>
+<div class="admonition abstract">
+<p class="admonition-title">Definition</p>
+<p>Calculated properties allow you to create new properties or change existing ones at run-time. This is done by passing a specially crafted hashtable to the Property parameter rather than a static property name.</p>
+<p>Below is an example of a calculated property hashtable.
+<div class="codehilite"><pre><span></span><span class="p">@{</span> <span class="n">Name</span> <span class="p">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>  <span class="n">Expression</span> <span class="p">=</span> <span class="p">{}}</span>
+</pre></div></p>
 </div>
-<div class="admonition success">
-<p class="admonition-title">Success</p>
-<p><strong>[HKEY_CURRENT_USER\Software\Microsoft\Office\16.O\Outlook\AutoDiscover]</strong>
-"ExcludeExplicitO365Endpoint"=dword:00000001</p>
-</div>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>This will probably not apply if you use 365 for your Exchange. We use on-prem Exchange 2010.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>original command example:</p>
+<div class="codehilite"><pre><span></span><span class="nb">Get-WmiObject</span> <span class="n">win32_computersystem</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">TotalPhysicalMemory</span>
+
+<span class="n">TotalPhysicalMemory</span>
+<span class="p">-------------------</span>
+        <span class="n">2147012608</span>
+</pre></div>
+
+<p>calculated property example:</p>
+<div class="codehilite"><pre><span></span><span class="nb">Get-WmiObject</span> <span class="n">win32_computersystem</span> <span class="p">|</span> <span class="nb">Select </span><span class="p">@{</span><span class="n">Name</span> <span class="p">=</span> <span class="s1">&#39;RAM (in GB)&#39;</span><span class="p">;</span> <span class="n">Expression</span> <span class="p">=</span> <span class="p">{</span><span class="nv">$_</span><span class="p">.</span><span class="n">TotalPhysicalMemory</span><span class="p">/</span><span class="n">1GB</span><span class="p">}}</span>
+
+            <span class="n">RAM</span> <span class="p">(</span><span class="k">in</span> <span class="n">GB</span><span class="p">)</span>
+            <span class="p">---</span>
+<span class="n">1</span><span class="p">,</span><span class="n">99956130981445</span>
+</pre></div>
+
 </div>
                 
                   
@@ -588,7 +597,7 @@ records first. </p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../powershell/calculated-properties/" title="calculated expressions" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../delete-variable-cache/" title="delete variable cache" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -597,19 +606,19 @@ records first. </p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                calculated expressions
+                delete variable cache
               </span>
             </div>
           </a>
         
         
-          <a href="../../../help/help/" title="⠀" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../outlook/keeps-prompting-for-password/" title="keeps prompting for password" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                ⠀
+                keeps prompting for password
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
