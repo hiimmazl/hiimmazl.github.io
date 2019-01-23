@@ -452,38 +452,9 @@
       
     
     
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        keeps prompting for password
-      </label>
-    
     <a href="./" title="keeps prompting for password" class="md-nav__link md-nav__link--active">
       keeps prompting for password
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-method" title="1. Method" class="md-nav__link">
-    1. Method
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
     
   </li>
 
@@ -551,22 +522,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-method" title="1. Method" class="md-nav__link">
-    1. Method
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -580,14 +535,10 @@
                 
                 <p><html>
 <center></html></p>
-<h1 id="outlook-keeps-prompting-for-password">Outlook keeps prompting for password</h1>
+<h1 id="outlook-keeps-prompting-for-password">Outlook - keeps prompting for password</h1>
 <p><html>
 </center></html></p>
-<p><html>
-<center></html></p>
-<h3 id="1-method">1. Method</h3>
-<p><html>
-</center></html></p>
+<hr />
 <div class="admonition quote">
 <p class="admonition-title">Quote</p>
 <p>Managed to resolve this issue now. 
@@ -596,8 +547,11 @@ to use SCR etc. Older versions try to use SCP and HTTP methods, but now 365 is t
 This can be disabled With this reg key, which stops Outlook from trying to poll 365 autodiscover 
 records first. </p>
 </div>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
 <p><strong>[HKEY_CURRENT_USER\Software\Microsoft\Office\16.O\Outlook\AutoDiscover]</strong>
 "ExcludeExplicitO365Endpoint"=dword:00000001</p>
+</div>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>This will probably not apply if you use 365 for your Exchange. We use on-prem Exchange 2010.</p>
