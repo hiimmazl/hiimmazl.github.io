@@ -598,6 +598,8 @@
 <p><html>
 </center></html></p>
 <hr />
+<div class="admonition failure">
+<p class="admonition-title">Failure</p>
 <h5 id="error-when-using-these-cmdlets-or-these-messages-appear">Error when using these cmdlets or these messages appear:</h5>
 <ul>
 <li>TLS/SSL secure channel error</li>
@@ -607,43 +609,48 @@
 <blockquote>
 <p><code class="codehilite">The request was aborted: Could not create SSL/TLS secure channel.</code> </p>
 </blockquote>
+</div>
 <p><html>
 <center></html></p>
 <h3 id="solution">Solution</h3>
 <p><html>
 </center></html></p>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
 <div class="codehilite"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="o">-not</span> <span class="p">(</span><span class="no">[System.Management.Automation.PSTypeName]</span><span class="s1">&#39;ServerCertificateValidationCallback&#39;</span><span class="p">).</span><span class="n">Type</span><span class="p">)</span>
 <span class="p">{</span>
 <span class="nv">$certCallback</span> <span class="p">=</span> <span class="sh">@&quot;</span>
-<span class="sh">    using System;</span>
-<span class="sh">    using System.Net;</span>
-<span class="sh">    using System.Net.Security;</span>
-<span class="sh">    using System.Security.Cryptography.X509Certificates;</span>
-<span class="sh">    public class ServerCertificateValidationCallback</span>
+<span class="sh">using System;</span>
+<span class="sh">using System.Net;</span>
+<span class="sh">using System.Net.Security;</span>
+<span class="sh">using System.Security.Cryptography.X509Certificates;</span>
+<span class="sh">public class ServerCertificateValidationCallback</span>
+<span class="sh">{</span>
+<span class="sh">    public static void Ignore()</span>
 <span class="sh">    {</span>
-<span class="sh">        public static void Ignore()</span>
+<span class="sh">        if(ServicePointManager.ServerCertificateValidationCallback ==null)</span>
 <span class="sh">        {</span>
-<span class="sh">            if(ServicePointManager.ServerCertificateValidationCallback ==null)</span>
-<span class="sh">            {</span>
-<span class="sh">                ServicePointManager.ServerCertificateValidationCallback += </span>
-<span class="sh">                    delegate</span>
-<span class="sh">                    (</span>
-<span class="sh">                        Object obj, </span>
-<span class="sh">                        X509Certificate certificate, </span>
-<span class="sh">                        X509Chain chain, </span>
-<span class="sh">                        SslPolicyErrors errors</span>
-<span class="sh">                    )</span>
-<span class="sh">                    {</span>
-<span class="sh">                        return true;</span>
-<span class="sh">                    };</span>
-<span class="sh">            }</span>
+<span class="sh">            ServicePointManager.ServerCertificateValidationCallback += </span>
+<span class="sh">                delegate</span>
+<span class="sh">                (</span>
+<span class="sh">                    Object obj, </span>
+<span class="sh">                    X509Certificate certificate, </span>
+<span class="sh">                    X509Chain chain, </span>
+<span class="sh">                    SslPolicyErrors errors</span>
+<span class="sh">                )</span>
+<span class="sh">                {</span>
+<span class="sh">                    return true;</span>
+<span class="sh">                };</span>
 <span class="sh">        }</span>
 <span class="sh">    }</span>
+<span class="sh">}</span>
 <span class="sh">&quot;@</span>
-    <span class="nb">Add-Type</span> <span class="nv">$certCallback</span>
- <span class="p">}</span>
+<span class="nb">Add-Type</span> <span class="nv">$certCallback</span>
+<span class="p">}</span>
 <span class="no">[ServerCertificateValidationCallback]</span><span class="p">::</span><span class="n">Ignore</span><span class="p">()</span> 
 </pre></div>
+
+</div>
                 
                   
                 

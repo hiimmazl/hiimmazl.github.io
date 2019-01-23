@@ -91,7 +91,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#error-creating-bean-with-name-authenticationmanager-cannot-resolve-reference-to-bean-activedirectory-while-setting-bean-property-providers" tabindex="1" class="md-skip">
+      <a href="#jenkins-error-creating-bean-with-name-authenticationmanager" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -365,37 +365,12 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
+      
     
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        error_authenticationmanager
-      </label>
     
     <a href="./" title="error_authenticationmanager" class="md-nav__link md-nav__link--active">
       error_authenticationmanager
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#error-creating-bean-with-name-authenticationmanager-cannot-resolve-reference-to-bean-activedirectory-while-setting-bean-property-providers" title="Error creating bean with name 'authenticationManager': Cannot resolve reference to bean 'activeDirectory' while setting bean property 'providers'" class="md-nav__link">
-    Error creating bean with name 'authenticationManager': Cannot resolve reference to bean 'activeDirectory' while setting bean property 'providers'
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
     
   </li>
 
@@ -544,22 +519,8 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
   
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#error-creating-bean-with-name-authenticationmanager-cannot-resolve-reference-to-bean-activedirectory-while-setting-bean-property-providers" title="Error creating bean with name 'authenticationManager': Cannot resolve reference to bean 'activeDirectory' while setting bean property 'providers'" class="md-nav__link">
-    Error creating bean with name 'authenticationManager': Cannot resolve reference to bean 'activeDirectory' while setting bean property 'providers'
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
   
 </nav>
                   </div>
@@ -572,23 +533,26 @@
               
                 
                 
-                  <h1>error_authenticationmanager</h1>
-                
                 <p><html>
 <center></html></p>
-<h3 id="error-creating-bean-with-name-authenticationmanager-cannot-resolve-reference-to-bean-activedirectory-while-setting-bean-property-providers">Error creating bean with name 'authenticationManager': Cannot resolve reference to bean 'activeDirectory' while setting bean property 'providers'</h3>
+<h1 id="jenkins-error-creating-bean-with-name-authenticationmanager">Jenkins - Error creating bean with name 'authenticationManager'</h1>
 <p><html>
 </center></html></p>
 <hr />
-<blockquote>
-<p>Stopped the Jenkins service, and unregistered and registered the service using the following in an administrative command prompt:</p>
-</blockquote>
+<div class="admonition failure">
+<p class="admonition-title">Failure</p>
+<p><code class="codehilite">Error creating bean with name &#39;authenticationManager&#39;: Cannot resolve reference to bean &#39;activeDirectory&#39; while setting bean property &#39;providers&#39;</code></p>
+</div>
+<div class="admonition done">
+<p class="admonition-title">Done</p>
+<p>Stopped the Jenkins service, and unregistered and registered the service using the following in an administrative command prompt:
 <div class="codehilite"><pre><span></span><span class="nb">cd </span><span class="p">\</span><span class="n">Program</span> <span class="n">Files</span> <span class="p">(</span><span class="n">x86</span><span class="p">)\</span><span class="n">Jenkins</span>
 <span class="n">net</span> <span class="n">stop</span> <span class="n">jenkins</span>
 <span class="n">jenkins</span> <span class="n">uninstall</span>
 <span class="n">jenkins</span> <span class="n">install</span>
 <span class="n">net</span> <span class="nb">start </span><span class="n">jenkins</span>
-</pre></div>
+</pre></div></p>
+</div>
                 
                   
                 
