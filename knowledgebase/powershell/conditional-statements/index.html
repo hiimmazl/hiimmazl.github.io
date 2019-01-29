@@ -793,9 +793,117 @@ contains only one statement.</p>
 </table>
 <h3 id="looping-statements">Looping Statements</h3>
 <h4 id="for-statement">for Statement</h4>
+<div class="admonition abstract">
+<p class="admonition-title">Definition</p>
+<div class="codehilite"><pre><span></span><span class="err">:</span><span class="n">loop_label</span> <span class="k">for</span> <span class="p">(</span><span class="n">initialization</span><span class="p">;</span> <span class="n">condition</span><span class="p">;</span> <span class="n">increment</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">statement</span> <span class="n">block</span>
+<span class="p">}</span>
+</pre></div>
+
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="codehilite"><pre><span></span><span class="k">for</span><span class="p">(</span><span class="nv">$counter</span> <span class="p">=</span> <span class="n">0</span><span class="p">;</span> <span class="nv">$counter</span> <span class="o">-lt</span> <span class="n">10</span><span class="p">;</span> <span class="nv">$counter</span><span class="p">++)</span>
+<span class="p">{</span>
+ <span class="nb">Write-Host</span> <span class="s2">&quot;Processing item $counter&quot;</span>
+<span class="p">}</span>
+</pre></div>
+
+</div>
 <h4 id="foreach-statement">foreach Statement</h4>
+<div class="admonition abstract">
+<p class="admonition-title">Definition</p>
+<div class="codehilite"><pre><span></span><span class="err">:</span><span class="n">loop_label</span> <span class="k">foreach</span> <span class="p">(</span><span class="n">variable</span> <span class="k">in</span> <span class="n">expression</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">statement</span> <span class="n">block</span>
+<span class="p">}</span>
+</pre></div>
+
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="codehilite"><pre><span></span><span class="nv">$handleSum</span> <span class="p">=</span> <span class="n">0</span><span class="p">;</span>
+<span class="k">foreach</span><span class="p">(</span><span class="nv">$process</span> <span class="k">in</span> <span class="nb">Get-Process</span> <span class="p">|</span>
+    <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Handles</span> <span class="o">-gt</span> <span class="n">500</span> <span class="p">})</span>
+<span class="p">{</span>
+    <span class="nv">$handleSum</span> <span class="p">+=</span> <span class="nv">$process</span><span class="p">.</span><span class="n">Handles</span>
+<span class="p">}</span>
+<span class="nv">$handleSum</span>
+</pre></div>
+
+</div>
 <h4 id="while-statement">while Statement</h4>
+<div class="admonition abstract">
+<p class="admonition-title">Definition</p>
+<div class="codehilite"><pre><span></span><span class="err">:</span><span class="n">loop_label</span> <span class="k">while</span><span class="p">(</span><span class="n">condition</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">statement</span> <span class="n">block</span>
+<span class="p">}</span>
+</pre></div>
+
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="codehilite"><pre><span></span><span class="nv">$command</span> <span class="p">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+<span class="k">while</span><span class="p">(</span><span class="nv">$command</span> <span class="o">-notmatch</span> <span class="s2">&quot;quit&quot;</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nv">$command</span> <span class="p">=</span> <span class="nb">Read-Host</span> <span class="s2">&quot;Enter your command&quot;</span>
+<span class="p">}</span>
+</pre></div>
+
+</div>
 <h4 id="do-while-statementdo-until-statement">do … while Statement/do … until Statement</h4>
+<div class="admonition abstract">
+<p class="admonition-title">Definition</p>
+<div class="superfences-tabs">
+<input name="__tabs_1" type="radio" id="__tab_1_0" checked="checked" />
+<label for="__tab_1_0">do ... while</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="err">:</span><span class="n">loop_label</span> <span class="k">do</span>
+<span class="p">{</span>
+    <span class="n">statement</span> <span class="n">block</span>
+<span class="p">}</span> <span class="k">while</span><span class="p">(</span><span class="n">condition</span><span class="p">)</span>
+</pre></div></div>
+<input name="__tabs_1" type="radio" id="__tab_1_1" />
+<label for="__tab_1_1">do ... until</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="err">:</span><span class="n">loop_label</span> <span class="k">do</span>
+<span class="p">{</span>
+    <span class="n">statement</span> <span class="n">block</span>
+<span class="p">}</span> <span class="k">until</span><span class="p">(</span><span class="n">condition</span><span class="p">)</span>
+</pre></div></div>
+</div>
+</div>
+<blockquote>
+<p>When PowerShell executes a do … while or do … until statement, it first executes the
+given statement block. In a do … while statement, PowerShell continues to execute the
+statement block as long as condition evaluates to $true. In a do … until statement,
+PowerShell continues to execute the statement as long as condition evaluates to
+$false.</p>
+</blockquote>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="superfences-tabs">
+<input name="__tabs_2" type="radio" id="__tab_2_0" checked="checked" />
+<label for="__tab_2_0">do ... while</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="nv">$validResponses</span> <span class="p">=</span> <span class="s2">&quot;Yes&quot;</span><span class="p">,</span><span class="s2">&quot;No&quot;</span>
+<span class="nv">$response</span> <span class="p">=</span> <span class="s2">&quot;&quot;</span>
+<span class="k">do</span>
+<span class="p">{</span>
+    <span class="nv">$response</span> <span class="p">=</span> <span class="nb">read-host</span> <span class="s2">&quot;Yes or No?&quot;</span>
+<span class="p">}</span> <span class="k">while</span><span class="p">(</span><span class="nv">$validResponses</span> <span class="o">-notcontains</span> <span class="nv">$response</span><span class="p">)</span>
+<span class="s2">&quot;Got it.&quot;</span>
+</pre></div></div>
+<input name="__tabs_2" type="radio" id="__tab_2_1" />
+<label for="__tab_2_1">do ... until</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="nv">$response</span> <span class="p">=</span> <span class="s2">&quot;&quot;</span>
+<span class="k">do</span>
+<span class="p">{</span>
+    <span class="nv">$response</span> <span class="p">=</span> <span class="nb">read-host</span> <span class="s2">&quot;Yes or No?&quot;</span>
+<span class="p">}</span> <span class="k">until</span><span class="p">(</span><span class="nv">$validResponses</span> <span class="o">-contains</span> <span class="nv">$response</span><span class="p">)</span>
+<span class="s2">&quot;Got it.&quot;</span>
+</pre></div></div>
+</div>
+</div>
                 
                   
                 
