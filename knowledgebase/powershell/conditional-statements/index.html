@@ -704,8 +704,8 @@
 <p><html>
 </center></html></p>
 <hr />
-<div class="admonition abstract">
-<p class="admonition-title">Definition</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>Conditional statements in PowerShell let you change the flow of execution in your script.</p>
 </div>
 <h3 id="if-elseif-and-else-statements">if, elseif, and else Statements</h3>
@@ -713,15 +713,15 @@
 <p class="admonition-title">Definition</p>
 <p><div class="codehilite"><pre><span></span><span class="k">if</span><span class="p">(</span><span class="n">condition</span><span class="p">)</span>
 <span class="p">{</span>
-<span class="n">statement</span> <span class="n">block</span>
+    <span class="n">statement</span> <span class="n">block</span>
 <span class="p">}</span>
 <span class="k">elseif</span><span class="p">(</span><span class="n">condition</span><span class="p">)</span>
 <span class="p">{</span>
-<span class="n">statement</span> <span class="n">block</span>
+    <span class="n">statement</span> <span class="n">block</span>
 <span class="p">}</span>
 <span class="k">else</span>
 <span class="p">{</span>
-<span class="n">statement</span> <span class="n">block</span>
+    <span class="n">statement</span> <span class="n">block</span>
 <span class="p">}</span>
 </pre></div>
 If condition evaluates to $true, PowerShell executes the statement block you provide.
@@ -729,7 +729,9 @@ Then, it resumes execution at the end of the if/elseif/else statement list. Powe
 requires the enclosing braces around the statement block, even if the statement block
 contains only one statement.</p>
 </div>
-<details class="example"><summary>Example</summary><div class="codehilite"><pre><span></span><span class="nv">$textToMatch</span> <span class="p">=</span> <span class="nb">Read-Host</span> <span class="s2">&quot;Enter some text&quot;</span>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="codehilite"><pre><span></span><span class="nv">$textToMatch</span> <span class="p">=</span> <span class="nb">Read-Host</span> <span class="s2">&quot;Enter some text&quot;</span>
 <span class="nv">$matchType</span> <span class="p">=</span> <span class="nb">Read-Host</span> <span class="s2">&quot;Apply Simple or Regex matching?&quot;</span>
 <span class="nv">$pattern</span> <span class="p">=</span> <span class="nb">Read-Host</span> <span class="s2">&quot;Match pattern&quot;</span>
 <span class="k">if</span><span class="p">(</span><span class="nv">$matchType</span> <span class="o">-eq</span> <span class="s2">&quot;Simple&quot;</span><span class="p">)</span>
@@ -748,22 +750,22 @@ contains only one statement.</p>
 <span class="p">}</span>
 </pre></div>
 
-</details>
+</div>
 <h3 id="switch-statements">switch Statements</h3>
 <div class="admonition abstract">
 <p class="admonition-title">Definition</p>
 <div class="codehilite"><pre><span></span><span class="k">switch</span> <span class="n">options</span> <span class="n">expression</span>
 <span class="p">{</span>
-<span class="n">comparison</span> <span class="n">value</span> <span class="p">{</span> <span class="n">statement</span> <span class="n">block</span> <span class="p">}</span>
-<span class="o">-or</span><span class="p">-</span>
-<span class="p">{</span> <span class="n">comparison</span> <span class="n">expression</span> <span class="p">}</span> <span class="p">{</span> <span class="n">statement</span> <span class="n">block</span> <span class="p">}</span>
-<span class="p">(...)</span>
-<span class="k">default</span> <span class="p">{</span> <span class="n">statement</span> <span class="n">block</span> <span class="p">}</span>
+    <span class="n">comparison</span> <span class="n">value</span>            <span class="p">{</span> <span class="n">statement</span> <span class="n">block</span> <span class="p">}</span>
+    <span class="o">-or</span><span class="p">-</span>
+    <span class="p">{</span> <span class="n">comparison</span> <span class="n">expression</span> <span class="p">}</span>   <span class="p">{</span> <span class="n">statement</span> <span class="n">block</span> <span class="p">}</span>
+    <span class="p">(...)</span>
+    <span class="k">default</span>                     <span class="p">{</span> <span class="n">statement</span> <span class="n">block</span> <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 
 </div>
-<details class="abstract"><summary>options supported by powershell switch statements</summary><table>
+<table>
 <thead>
 <tr>
 <th>Option</th>
@@ -784,12 +786,11 @@ contains only one statement.</p>
 <td>Regular-expression match. With this option active, PowerShell executes the associated statement block only if the current input item matches the regular expression specified by comparison value. This match is case-insensitive.</td>
 </tr>
 <tr>
-<td>--wildcard <br> -w</td>
-<td>Wildcard match. With this option active, PowerShell executes the associated statement block only if the current input item matches the wildcard specified by comparison value. The wildcard match supports the following simple wildcard characters: <p> <br> <strong>?</strong> Any single unspecified character <br> * Zero or more unspecified characters <br> <strong>[a-b]</strong>  Any character in the range of a–b <br> <strong>[ab]</strong> The specified characters a or b <p> <br> This match is case-insensitive.</td>
+<td>-wildcard <br> -w</td>
+<td>Wildcard match. With this option active, PowerShell executes the associated statement block only if the current input item matches the wildcard specified by comparison value. The wildcard match supports the following simple wildcard characters: <p> <br> <strong>?</strong> Any single unspecified character <br> <strong>*</strong>  Zero or more unspecified characters <br> <strong>[a-b]</strong>  Any character in the range of a–b <br> <strong>[ab]</strong> The specified characters a or b <p> <br> This match is case-insensitive.</td>
 </tr>
 </tbody>
 </table>
-</details>
 <h3 id="looping-statements">Looping Statements</h3>
 <h4 id="for-statement">for Statement</h4>
 <h4 id="foreach-statement">foreach Statement</h4>
